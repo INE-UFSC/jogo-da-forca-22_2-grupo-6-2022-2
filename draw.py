@@ -1,21 +1,67 @@
-# Função que pega estado do jogo e printa de acordo com os erros atuais
-# Recebe como parâmetro total de erros e printa a cada input do usuário o "bonequinho" do estágio atual
-# Se o usuário não errou a letra, continua no mesmo estágio
+# Função que pega estado do jogo e printa de acordo com os erros atuais (Implementar)
+# Recebe como parâmetro total de erros e printa a cada input do usuário o "bonequinho" do estágio atual (Feito)
 
-def stage(errors):
+'''  Lista de desenhos com índice relativo a quantidade de erros atual do round:
+     erros: 0 Inteiro
+     erros: 1 Braço Esq
+     erros: 2 Braço Dir
+     erros: 3 Perna Esq 
+     erros: 4 Perna Dir
+     erros: 5 Corpo
+     erros: 6 Game Over '''
 
-    # errors: 0 Inteiro
-
-    # errors: 1 Cabeça
-
-    # errors: 2 Braço Esq
-
-    # - errors: 3  Braço Dir
-
-    # - errors: 4 Perna Esq 
-
-    # - errors: 5  Perna Dir
-
-    # errors: 6 Game Over
-
-#return current_stage
+stage_list = ['''
+     _______
+     |/      |
+     |      (_)
+     |      \|/
+     |       |
+     |      / \\
+     |
+    _|___''', '''
+    _______
+     |/      |
+     |      (_)
+     |       |/
+     |       |
+     |      / \\
+     |
+    _|___''', '''
+    _______
+     |/      |
+     |      (_)
+     |       |
+     |       |
+     |      / \\
+     |
+    _|___''' , '''
+    _______
+     |/      |
+     |      (_)
+     |       |
+     |       |
+     |        \\
+     |
+    _|___''', '''
+    _______
+     |/      |
+     |      (_)
+     |       |
+     |       |
+     |       
+     |
+    _|___''' , '''
+    _______
+     |/      |
+     |      (_)
+     |       
+     |       
+     |      
+     |
+    _|___''', '''                                                                      
+  ______  ____    ____    __  ______   _____  __    _ ______  _____   
+ |   ___||    \  |    \  /  ||   ___| /     \\\\  \  //|   ___||     |  
+ |   |  ||     \ |     \/   ||   ___| |     | \  \// |   ___||     \  
+ |______||__|\__\|__/\__/|__||______| \_____/  \__/  |______||__|\__\                                                                      
+                                                                      
+''']
