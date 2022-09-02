@@ -4,7 +4,7 @@
 
 import random
 from random import randint
-from tentativas import jogo
+from tentativas import *
 
 continuar_jogo = True
 
@@ -37,10 +37,15 @@ def menu():
 def inserirPalavra():
     print("Digite a palavra ou frase que deseja inserir:")
     palavra = input()
-    lista_de_palavras = open("palavras.txt", "a")
-    lista_de_palavras.write(palavra + "\n")
-    lista_de_palavras.close()
-    print("Palavra ou frase inserida com sucesso!")
+    for caracter_teste in palavra:
+        num_00 = ord(caracter_teste) - 97
+        if num_00 > 25 or num_00 < 0:
+            print("Palavra ou frase inválida!")
+        else:
+            lista_de_palavras = open("palavras.txt", "a")
+            lista_de_palavras.write(palavra + "\n")
+            lista_de_palavras.close()
+            print("Palavra ou frase inserida com sucesso!")
     while True:
         print("Deseja inserir outra palavra ou frase? (s/n)")
         escolha = input()
@@ -52,4 +57,4 @@ def inserirPalavra():
             print("Opção inválida!")
     return menu()
 
-inserirPalavra()
+menu()
