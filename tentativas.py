@@ -12,22 +12,22 @@ def tentativas(numero_de_caracteres,frase,matriz_mapeamento):
     while True:
         letras_tentadas = list(set(letras_tentadas))
         letras_tentadas.sort()
-        #print(forca(erros))
+        print(forca(erros), end = '         ')
 
         for i in casas_letras:
             print(i, end = '')
 
         print('\nLetras tentadas: ', end = '')
-        
+
         for a in letras_tentadas:
                 print(a, end = ' ')
         print()
 
-        letra = input()
+        letra = input("Digite a letra:")
         valor_ascii = ord(letra.lower())-97
     
         while valor_ascii > 26 or valor_ascii < 0:
-            letra = input()
+            letra = input("Digite novamente (apenas letras do alfabeto): ")
             valor_ascii = ord(letra.lower())-97
     
         if matriz_mapeamento[valor_ascii] != "no":
@@ -43,9 +43,10 @@ def tentativas(numero_de_caracteres,frase,matriz_mapeamento):
             letras_tentadas.append(chr(valor_ascii+97))
         
         if erros == 6:
-            #print(forca(erros))
+            print(forca(erros))
             break
         
         elif "_" not in casas_letras:
-            #print(victory())
+            print(victory())
+            print()
             break
