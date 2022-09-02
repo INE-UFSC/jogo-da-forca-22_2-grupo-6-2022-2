@@ -39,8 +39,12 @@ def inserirPalavra():
     palavra = input()
     for caracter_teste in palavra:
         num_00 = ord(caracter_teste) - 97
-        if num_00 > 25 or num_00 < 0:
+        if palavra in lista_de_palavras:
+            print("Palavra ou frase já existente!")
+            break
+        elif num_00 > 25 or num_00 < 0:
             print("Palavra ou frase inválida!")
+            break
         else:
             lista_de_palavras = open("palavras.txt", "a")
             lista_de_palavras.write(palavra + "\n")
