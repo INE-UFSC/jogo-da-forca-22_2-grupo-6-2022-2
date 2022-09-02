@@ -63,6 +63,7 @@ def tentativas():
         
         if erros == 6:
             draw_stage(erros)
+            print()
             break
         
         elif "_" not in casas_letras:
