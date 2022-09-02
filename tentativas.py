@@ -37,11 +37,12 @@ def tentativas():
             print('', i.upper(), end = '')
 
         print('\n\nLetras tentadas: ', end = '')
-        print(f'Erros: {erros}/6')
         for a in letras_tentadas:
-                print(a, end = ', ')
+            print(a, end = ', ')
+        print(f'\nErros: {erros}/6')
 
         letra = input("\n\nDigite uma letra\n>>> ")
+
         valor_ascii = ord(letra.lower())-97
 
         while valor_ascii > 26 or valor_ascii < 0:
