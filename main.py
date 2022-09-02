@@ -1,4 +1,4 @@
-#lista_de_frases = ["bola de bilhar", "orientacao a objetos", "manipulacao dos dados", "projeto final", "spaghetti code", "palavra", "teste", "debug", "correcao"]
+
 from tentativas import tentativas
 
 continuar_jogo = True
@@ -25,7 +25,7 @@ def inserirPalavra():
     palavra_valida = True
     for caracter_teste in palavra:
         num_00 = ord(caracter_teste.lower()) - 97
-        if (num_00 > 25 or num_00 < 0) and caracter_teste != ' ':
+        if (num_00 > 25 or num_00 < 0) and caracter_teste != ' ': #isalpha()?
             print("Palavra ou frase inválida!")
             palavra_valida = False
             break

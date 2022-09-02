@@ -1,0 +1,21 @@
+def inserirPalavra():
+    print("Digite a palavra ou frase que deseja inserir:")
+    palavra = input()
+    palavra_valida = True
+    if palavra.isalpha()==0:
+        palavra_valida = False
+        break
+    #for caracter_teste in palavra:
+    #    num_00 = ord(caracter_teste.lower()) - 97
+    #    if (num_00 > 25 or num_00 < 0) and caracter_teste != ' ': #isalpha()?
+    #        print("Palavra ou frase inválida!")
+    #        palavra_valida = False
+    #        break
+        
+    else:
+        lista_de_palavras = open("palavras.txt", "a")
+        lista_de_palavras.write(palavra + "\n")
+        lista_de_palavras.close()         
+        print("Palavra ou frase inserida com sucesso!")
+
+Me digam oq vcs acham ae
