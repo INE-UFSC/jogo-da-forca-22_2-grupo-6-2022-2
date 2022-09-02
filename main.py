@@ -1,4 +1,4 @@
-#lista_de_frases = ["bola de bilhar", "orientacao a objetos", "manipulacao dos dados", "projeto final", "spaghetti code", "palavra", "teste", "debug", "correcao"]
+
 from tentativas import tentativas
 
 continuar_jogo = True
