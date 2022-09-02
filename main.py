@@ -4,17 +4,18 @@ from tentativas import tentativas
 continuar_jogo = True
 
 def menu():
-    print("Bem vindo ao jogo da forca!")
-    print("1 - Adicionar palavra ou frase")
+    print("\nBem vindo ao jogo da forca!")
+    print("\n1 - Adicionar palavra ou frase")
     print("2 - Jogar")
     print("3 - Sair")
-    escolha = input()
+    escolha = input(">>> ")
     if escolha == "1":
         return inserirPalavra()
     elif escolha == "2":
         tentativas()
         menu()
-        
+    elif escolha == "3":
+        quit
     else:
         print("Opção inválida!")
         return menu()

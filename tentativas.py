@@ -34,19 +34,18 @@ def tentativas():
         draw_stage(erros)
 
         for i in casas_letras:
-            print(i, end = '')
+            print('', i.upper(), end = '')
 
-        print('\nLetras tentadas: ', end = '')
-
+        print('\n\nLetras tentadas: ', end = '')
+        print(f'Erros: {erros}/6')
         for a in letras_tentadas:
-                print(a, end = ' ')
-        print()
+                print(a, end = ', ')
 
-        letra = input("Digite uma letra:")
+        letra = input("\n\nDigite uma letra\n>>> ")
         valor_ascii = ord(letra.lower())-97
 
         while valor_ascii > 26 or valor_ascii < 0:
-            letra = input("Digite novamente (apenas letras do alfabeto): ")
+            letra = input(f"Você inseriu o caractere '{letra}'. \nDigite novamente utilizando apenas letras do alfabeto:\n>>> ")
             valor_ascii = ord(letra.lower())-97
 
         if matriz_mapeamento[valor_ascii] != "no":
