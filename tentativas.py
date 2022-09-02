@@ -1,7 +1,7 @@
 
 
 #from main import jogo
-import draw_stage from draw
+from draw import draw_stage
 
 def jogo():
     lista_de_palavras = open("palavras.txt", "r")
