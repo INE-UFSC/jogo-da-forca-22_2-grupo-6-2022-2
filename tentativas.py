@@ -1,9 +1,20 @@
-
-
-#from main import jogo
+import random
+from random import randint
 from draw import draw_stage
 
-def jogo():
+def formadormatriz(frase, numero_de_caracteres):
+    matriz_mapeamento = ["no"]*26
+    for letra_pos in range (numero_de_caracteres):
+        valor_ascii = ord(frase[letra_pos].lower()) - 97
+        if frase[letra_pos] == " ":
+            continue
+        elif matriz_mapeamento[valor_ascii] == "no":
+            matriz_mapeamento[valor_ascii] = [letra_pos]
+        else:
+            matriz_mapeamento[valor_ascii] += [letra_pos]
+    return matriz_mapeamento
+
+def tentativas():
     lista_de_palavras = open("palavras.txt", "r")
     lista_de_palavras = lista_de_palavras.read().splitlines()
     frase = random.choice(lista_de_palavras)
@@ -23,9 +34,9 @@ def jogo():
             letra = input()
             valor_ascii = ord(letra.lower())-97
 
-        for letra in range(len(frase)):
+        for l in range(len(frase)):
             if letra in matriz_mapeamento[valor_ascii]:
-                casas_letras[letra] = chr(valor_ascii+97)
+                casas_letras[l] = chr(valor_ascii+97)
             else:
                 pass
 
@@ -49,37 +60,37 @@ def jogo():
             menu()
             break
 
-def tentativas(numero_de_caracteres,frase,matriz_mapeamento):
-    erros = 0
-    casas_letras = ["_"]*numero_de_caracteres
-    letras_tentadas = []
+# def tentativas(numero_de_caracteres,frase,matriz_mapeamento):
+#     erros = 0
+#     casas_letras = ["_"]*numero_de_caracteres
+#     letras_tentadas = []
 
-    for a in range(len(frase)):
-        if frase[a] == " ":
-            casas_letras[a] = " "
+#     for a in range(len(frase)):
+#         if frase[a] == " ":
+#             casas_letras[a] = " "
 
-    while True:
-        letra = input()
-        valor_ascii = ord(letra.lower())-97
+#     while True:
+#         letra = input()
+#         valor_ascii = ord(letra.lower())-97
 
-        while valor_ascii > 26 or valor_ascii < 0:
-            letra = input()
-            valor_ascii = ord(letra.lower())-97
+#         while valor_ascii > 26 or valor_ascii < 0:
+#             letra = input()
+#             valor_ascii = ord(letra.lower())-97
 
-        if matriz_mapeamento[valor_ascii] != "no":
-           for i in matriz_mapeamento[valor_ascii]:
-               casas_letras[i] = chr(valor_ascii+97)
-        else:
-            erros += 1
-            letras_tentadas.append(chr(valor_ascii+97))
-            print(letras_tentadas)
+#         if matriz_mapeamento[valor_ascii] != "no":
+#            for i in matriz_mapeamento[valor_ascii]:
+#                casas_letras[i] = chr(valor_ascii+97)
+#         else:
+#             erros += 1
+#             letras_tentadas.append(chr(valor_ascii+97))
+#             print(letras_tentadas)
 
-        if erros == 6:
-            print("Você perdeu!")
-            break
+#         if erros == 6:
+#             print("Você perdeu!")
+#             break
 
-        elif "_" not in casas_letras:
-            print("Acertou :D")
-            break
+#         elif "_" not in casas_letras:
+#             print("Acertou :D")
+#             break
 
-        print(casas_letras)
+#         print(casas_letras)
