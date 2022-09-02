@@ -1,5 +1,6 @@
 # Função que pega estado do jogo e printa de acordo com os erros atuais (Implementar)
 # Recebe como parâmetro total de erros e printa a cada input do usuário o "bonequinho" do estágio atual (Feito)
+import os
 
 '''  Lista de desenhos com índice relativo a quantidade de erros atual do round:
      erros: 0 nada
@@ -67,4 +68,5 @@ stage_list = ['''
 ''', '''ganho uhuu''']
 
 def draw_stage(erros):
+    os.system('cls')
     print(stage_list[erros])
