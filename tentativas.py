@@ -1,3 +1,7 @@
+
+
+from main import jogo
+
 def tentativas(numero_de_caracteres,frase,matriz_mapeamento):
     erros = 0
     casas_letras = ["_"]*numero_de_caracteres
@@ -30,3 +34,5 @@ def tentativas(numero_de_caracteres,frase,matriz_mapeamento):
         elif "_" not in casas_letras:
             print("Acertou :D")
             break
+
+        print(casas_letras)
