@@ -12,7 +12,9 @@ def menu():
     if escolha == "1":
         return inserirPalavra()
     elif escolha == "2":
-        return tentativas()
+        tentativas()
+        menu()
+        
     else:
         print("Opção inválida!")
         return menu()
@@ -20,15 +22,20 @@ def menu():
 def inserirPalavra():
     print("Digite a palavra ou frase que deseja inserir:")
     palavra = input()
+    palavra_valida = True
     for caracter_teste in palavra:
-        num_00 = ord(caracter_teste) - 97
-        if num_00 > 25 or num_00 < 0:
+        num_00 = ord(caracter_teste.lower()) - 97
+        if (num_00 > 25 or num_00 < 0) and caracter_teste != ' ':
             print("Palavra ou frase inválida!")
-        else:
-            lista_de_palavras = open("palavras.txt", "a")
-            lista_de_palavras.write(palavra + "\n")
-            lista_de_palavras.close()
-            print("Palavra ou frase inserida com sucesso!")
+            palavra_valida = False
+            break
+        
+    if palavra_valida == True:
+        lista_de_palavras = open("palavras.txt", "a")
+        lista_de_palavras.write(palavra + "\n")
+        lista_de_palavras.close()         
+        print("Palavra ou frase inserida com sucesso!")
+
     while True:
         print("Deseja inserir outra palavra ou frase? (s/n)")
         escolha = input()
